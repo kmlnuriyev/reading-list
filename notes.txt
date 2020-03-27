@@ -1,4 +1,12 @@
 SPRING BOOT IN ACTION
 
 1. Created the model class with @Entity annotation - Book.java
+
 2. Created the repository interface (ReadingListRepository.java) which extends JpaRepository (JpaRepository<Book, Long>) interface
+
+3. Created ReadingListController to add the reader into the book and retrieve the list of books of selected reader
+
+4. Created readingList.html and added xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org" into the HTML tag;
+I have deleted 'www' from xmlns for thymeleaf because the error 'Cannot resolve ...'.
+
+5.
