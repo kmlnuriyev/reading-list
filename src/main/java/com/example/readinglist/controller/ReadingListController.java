@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
 public class ReadingListController {
 
     private ReadingListRepository repository;
@@ -20,7 +19,7 @@ public class ReadingListController {
         this.repository = repository;
     }
 
-    @RequestMapping(value = "/{reader}", method = RequestMethod.GET)
+    @GetMapping("/{reader}")
     public String readersBooks(@PathVariable String reader, Model model) {
 
         List<Book> readingList = repository.findByReader(reader);
@@ -32,7 +31,7 @@ public class ReadingListController {
         return "readingList";
     }
 
-    @RequestMapping(value = "/{reader}", method = RequestMethod.POST)
+    @PostMapping("/{reader}")
     public String addToReadingList(@PathVariable String reader, Book book) {
 
         book.setReader(reader);
