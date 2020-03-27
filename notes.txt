@@ -1,4 +1,4 @@
 SPRING BOOT IN ACTION
 
-1. Creating the model class with @Entity annotation - Book.java
-2. 
+1. Created the model class with @Entity annotation - Book.java
+2. Created the repository interface (ReadingListRepository.java) which extends JpaRepository (JpaRepository<Book, Long>) interface
