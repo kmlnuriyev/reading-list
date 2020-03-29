@@ -9,4 +9,7 @@ SPRING BOOT IN ACTION
 4. Created readingList.html and added xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org" into the HTML tag;
 I have deleted 'www' from xmlns for thymeleaf because the error 'Cannot resolve ...'.
 
-5.
+5. We are going to add security dependency to the application.
+---------------------------------------------------------------
+
+1. Now I am going to create an application which uses mysql database

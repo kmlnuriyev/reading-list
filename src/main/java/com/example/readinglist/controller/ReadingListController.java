@@ -19,7 +19,7 @@ public class ReadingListController {
         this.repository = repository;
     }
 
-    @GetMapping("/{reader}")
+    @GetMapping("/reading-list/{reader}")
     public String readersBooks(@PathVariable String reader, Model model) {
 
         List<Book> readingList = repository.findByReader(reader);
@@ -31,13 +31,13 @@ public class ReadingListController {
         return "readingList";
     }
 
-    @PostMapping("/{reader}")
+    @PostMapping("/reading-list/{reader}")
     public String addToReadingList(@PathVariable String reader, Book book) {
 
         book.setReader(reader);
 
         repository.save(book);
 
-        return "redirect:/{reader}";
+        return "redirect:/reading-list/{reader}";
     }
 }
