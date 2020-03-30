@@ -13,6 +13,10 @@
             <dt class="bookHeadline">
                 <span th:text="${book.title}">Title</span> by
                 <span th:text="${book.author}">Author</span>
+                <a th:href="'http://www.amazon.com/gp/product/'
+                                + ${book.isbn}
+                                + '/tag=' + ${associateID}"
+                   th:text="${book.title}">Title</a>
                 (ISBN: <span th:text="${book.isbn}">ISBN</span>)
             </dt>
             <dd class="bookDescription">
