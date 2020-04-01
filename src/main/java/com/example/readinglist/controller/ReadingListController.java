@@ -9,10 +9,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
 @Controller
+@RequestMapping("/reading-list")
 public class ReadingListController {
 
     private AmazonProperties amazonProperties;
@@ -24,7 +26,7 @@ public class ReadingListController {
         this.amazonProperties = amazonProperties;
     }
 
-    @GetMapping("/reading-list/{reader}")
+    @GetMapping("/{reader}")
     public String readersBooks(@PathVariable String reader, Model model) {
 
         List<Book> readingList = repository.findByReader(reader);
@@ -39,7 +41,7 @@ public class ReadingListController {
         return "readingList";
     }
 
-    @PostMapping("/reading-list/{reader}")
+    @PostMapping("/{reader}")
     public String addToReadingList(@PathVariable String reader, Book book) {
 
         book.setReader(reader);
